@@ -1,5 +1,6 @@
-#### [C++ GUI Qt编程](http://www.qtcn.org/gpq4/)
+#### [C++ GUI Qt编程](http://www.qtcn.org/gpq4/) 
 ----
+* [网站](https://www.informit.com/store/c-plus-plus-gui-programming-with-qt4-9780132354165)
 * 1.1 Hello Qt!
 ```
 #include <QApplication>
