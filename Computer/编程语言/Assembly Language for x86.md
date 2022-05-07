@@ -1,3 +1,7 @@
+### Assembly Language for x86 Processors,Seventh Edition
+---
+> **第13章 高级语言接口--P438**</br>
+如何从高级语言调用汇编？`内嵌汇编代码(inline assembly code)`是指直接插入高级语言程序中的汇编源代码。
 * 数组求和
 ```
 .386
