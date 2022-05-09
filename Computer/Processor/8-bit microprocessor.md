@@ -1,11 +1,16 @@
 ### Design 8-bit Microprocessor
 ----
 #### 1. Instroduction
-![image](https://user-images.githubusercontent.com/59242221/167363716-bd289a89-fe90-48c8-982c-b1278d484ca5.png)
+|Computer architecture|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167363716-bd289a89-fe90-48c8-982c-b1278d484ca5.png)|
+
 * 8-bit data bus
 * 16-bit address bus
 * Instructions formatted </br>
-![image](https://user-images.githubusercontent.com/59242221/167353584-12103a0a-d22e-41e7-af17-54f901696091.png)
+
+|![image](https://user-images.githubusercontent.com/59242221/167353584-12103a0a-d22e-41e7-af17-54f901696091.png)|
+|--|
 * Instruction set 
 
 |Instruction|Opcode|Operands|
