@@ -1,6 +1,7 @@
 ### Design 8-bit Microprocessor
 ----
 #### 1. Instroduction
+![image](https://user-images.githubusercontent.com/59242221/167363716-bd289a89-fe90-48c8-982c-b1278d484ca5.png)
 * 8-bit data bus
 * 16-bit address bus
 * Instructions formatted </br>
@@ -42,3 +43,12 @@
 * Write - Active low signal which enables writing to SRAM
 
 #### 3. Module design
+* Program counter
+* General-purpose register block
+* Arithmetic logic unit(ALU)
+* ALU latch
+* Datapath
+* Control module
+* Address multiplexer
+* Memory IO
+* Complete chip
