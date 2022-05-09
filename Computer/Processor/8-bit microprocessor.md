@@ -160,3 +160,9 @@ translates the read and write signals into ROM and RAM chip enable signals.
 |CPU block diagram|
 |--|
 |![image](https://user-images.githubusercontent.com/59242221/167376618-c6937d5e-9736-487f-bc73-c063e7ea9b66.png)|
+
+#### 3. Hardware implementation
+|Block diagram of breadboard layout|
+|---|
+|![image](https://user-images.githubusercontent.com/59242221/167401306-ebb50780-36ee-4240-b367-6600bae9339c.png)|
+
