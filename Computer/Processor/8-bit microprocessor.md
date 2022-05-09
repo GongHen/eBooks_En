@@ -48,12 +48,115 @@
 * Write - Active low signal which enables writing to SRAM
 
 #### 3. Module design
+* Generic 16-bit register
+```
+ A 16-bit register is used three times in the design: the jump register, 
+ the memory address register, and the instruction register. The same module
+ is instantiated in all three of these cases.
+ ```
+|16-bit register block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167378286-d8156b03-6176-4de9-834a-90d53e353078.png)|
+```
+module register_16bit(clock, reset, setHigh, setLow, halfValueIn, valueOut);
+  input clock;
+  input reset; // Synchronous reset; active low
+  input setHigh;// When this signal is high, the top half of the value is loaded from the input line (data bus)
+  input setLow;
+  input [7:0] halfValueIn;
+  output reg [15:0] valueOut; 
+  
+  always @(posedge clock) begin
+    if(~reset) begin 
+      valueOut = 0;
+    end
+    else if(setHigh) begin
+      valueOut[15:8] = halfValueIn;
+    end
+    else if(setLow) begin
+      valueOut[7:0] = halfValueIn;
+    end
+  end
+ 
+endmodule
+```
 * Program counter
+```
+The program counter holds the address of the next instruction byte and is used to index ROM when fetching
+instructions. It increases the output count by on the rising edge of the clock when the increment signal
+is high. When the set signal is asserted, it loads the value from the jump register through the input
+newCount.
+```
+|Program counter block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167391044-2ab2a5c5-17c7-430c-b9b4-d69528831b44.png)|
+
 * General-purpose register block
+```
+The general-purpose register block contains 8 eight-bit registers which are used for data
+manipulation. Theyare grouped into pairs, creating 4 sixteen-bit registers which can receive
+the result of a multiply operation.
+```
+|Program counter block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167391622-abee894b-f571-46c7-a236-fa50844f77ed.png)|
+
 * Arithmetic logic unit(ALU)
+```
+The arithmetic logic unit implements all of the arithmetic operations specified: addition,
+subtraction, multiplication, logical AND and OR, left and right logical shifts, left and
+right arithmetic shifts, bitwise complement, and negation. It also contains a passthrough 
+instruction so that the ALU latch can be used as atemporary register for the MOVE operation. 
+Output flags are set based on the results of the operation
+```
+|ALU block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167392207-71bed916-7253-4cfc-bcdb-4a86530c3e09.png)|
+
 * ALU latch
+```
+The ALU latch uses a simple sequential design. The alu_result and flags are stored on the 
+rising edgeof the clock if grab is high. Combinational logic is used to determine which half 
+of the stored value is putout to the data bus. If neither store signal is high, the output is
+high-z. The flags_out output is always enabled.
+```
+|ALU block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167393143-9d6edbcf-c744-4634-8377-0be7d49ea9cd.png)|
+
 * Datapath
+```
+The datapath module combines the program counter, jump register, general-purpose registers,
+ALU, ALU latch, memory address register, and instruction register into a single unit 
+connected by a data bus. The databus is a bidirectional module port, so data can be brought 
+in and out of the chip.
+```
+|Datapath block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167380565-744265a8-8c3f-4324-8703-a191331afa18.png)|
+
 * Control module
+```
+The control module consists of two separate modules: a state machine which reads the output of
+the instruction register and determines what to do on the next clock cycle, and a signal 
+translation module whichmaps the control state into controls signals for all of the other modules.
+```
+|Block diagram of control module|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167382729-cebaf59a-4345-44f5-bea3-98d36888e9ce.png)|
 * Address multiplexer
+
 * Memory IO
+```
+The memory IO module performs memory mapping to locate the ROM and RAM in address space, and
+translates the read and write signals into ROM and RAM chip enable signals.
+```
+|Block diagram of memory IO module|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167383838-8a62471b-8571-4f40-92fb-5642daf8fe02.png)|
+
 * Complete chip
+
+|CPU block diagram|
+|--|
+|![image](https://user-images.githubusercontent.com/59242221/167376618-c6937d5e-9736-487f-bc73-c063e7ea9b66.png)|
