@@ -23,3 +23,16 @@
 int x = a.f();此调用方法的行为通常被称为发送消息给对象，消息是f(),对象是a。
               面向对象的程序设计通常简单的归纳为"向对象发送消息"。
 ```
+### 摘自《Head First java中文版》
+> **第一章 P8**</br>
+![image](https://user-images.githubusercontent.com/59242221/163748221-0501d10a-2001-478a-8532-ad00b8fbddbb.png)
+> **第二章 P36**</br>
+![image](https://user-images.githubusercontent.com/59242221/163748408-f18d20ca-35f1-43fd-a601-3e62c2ed3c28.png)
+> **第三章 P52**</br>
+![image](https://user-images.githubusercontent.com/59242221/163748527-025ca1d4-78da-44ce-80c9-aece48c68b60.png)
+
+### 摘自《Java核心技术 卷1 基础知识 原书第9版》
+> **第四章--对象与类 P93**</br>
+* 对象的行为(behavior):可以对对象施加哪些操作，或可以对对象施加哪些方法？
+* 对象的状态(state):当施加那些方法时，对象如何响应？
+* 对象的标识(identity):如何辨别具有相同行为与状态不同的对象？
