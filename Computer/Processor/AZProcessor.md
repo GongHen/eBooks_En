@@ -23,3 +23,10 @@
 * 元件选型
 
 ![image](https://user-images.githubusercontent.com/59242221/168009489-177f6905-dea3-40be-97d2-fd773e723e6d.png)
+* 3D模型图
+
+![image](https://user-images.githubusercontent.com/59242221/168010907-759c545e-202f-418d-beaa-18a33f2a2f7d.png)
+
+* 电路板
+
+![image](https://user-images.githubusercontent.com/59242221/168011273-33adc3c5-b09e-45d1-bd9e-524b9440e05b.png)
