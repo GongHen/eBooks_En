@@ -15,3 +15,11 @@
 ![image](https://user-images.githubusercontent.com/59242221/167756507-e9b5532c-6885-46c8-9e2f-5645726e31b8.png)
 * CPU顶层模块连接
 ![image](https://user-images.githubusercontent.com/59242221/168000508-35c11dfe-98dc-499c-a775-608632bcc731.png)
+
+#### 2.电路板制作
+* 制作流程
+
+![image](https://user-images.githubusercontent.com/59242221/168007930-01a11db6-f1d5-48ac-8bd1-69ecf86aa858.png)
+* 元件选型
+
+![image](https://user-images.githubusercontent.com/59242221/168009489-177f6905-dea3-40be-97d2-fd773e723e6d.png)
