@@ -1,7 +1,8 @@
 #### [C++ GUI Qt编程](http://www.qtcn.org/gpq4/) 
 ----
 * [网站](https://www.informit.com/store/c-plus-plus-gui-programming-with-qt4-9780132354165)
-* 1.1 Hello Qt!
+> Qt 框架允许开发与多种平台(如 Windows、Linux、MacOS、QNX(最初称为Quick Unix[Qunix])、iOS 和 Android)兼容的应用。 凭借其一次编码的能力和随时随地部署的理念，它以更好的代码质量促进了更快的应用开发。 Qt 在内部处理特定于平台的实现，还使您能够在微控制器驱动的设备上使用令人印象深刻的 GUI 构建令人惊叹的超轻量级应用。响应动作,子类化QDialog
+* Hello Qt!
 ```
 #include <QApplication>
 #include <QLabel>
@@ -14,53 +15,5 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 ```
-* 1.2 响应动作
-```
-#include <QApplication>
-#include <QPushButton>
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    QPushButton *button=new QPushButton("Quit");
-    QObject::connect(button,SIGNAL(clicked()),&a,SLOT(quit()));
-    button->show();
-    return a.exec();
-}
-```
-* 1.3窗口控件布局
-```
-#include <QApplication>
-#include <QHBoxLayout>
-#include <QSlider>
-#include <QSpinBox>
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-
-    QWidget *window=new QWidget;
-    window->setWindowTitle("Enter Your Age");
-
-    QSpinBox *spinBox=new QSpinBox;
-    QSlider *slider=new QSlider(Qt::Horizontal);
-    spinBox->setRange(0,130);
-    slider->setRange(0,130);
-
-    QObject::connect(spinBox,SIGNAL(valueChanged(int)),slider,SLOT(setValue(int)));
-    QObject::connect(slider,SIGNAL(valueChanged(int)),spinBox,SLOT(setValue(int)));
-    spinBox->setValue(35);
-
-    QHBoxLayout *layout=new QHBoxLayout;
-    layout->addWidget(spinBox);
-    layout->addWidget(slider);
-    window->setLayout(layout);
-
-    window->show();
-
-    return a.exec();
-}
-```
-* 2.1 子类化QDialog
-```
-```
